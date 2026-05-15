@@ -1,0 +1,350 @@
+﻿/* Fontes do google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Muda tudo da página para border-box. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Cores e variáveis */
+:root {
+    --bg: #0a0f0a;
+    --bg2: #0e1a0e;
+    --bg3: #121f12;
+    --green-dim: #1a3a1a;
+    --green-mid: #2d6a2d;
+    --green: #4caf50;
+    --green-bright: #6fcf73;
+    --green-glow: #a8e6ab;
+    --moss: #3d5c3d;
+    --cream: #e8ead6;
+    --text: #c8d8c0;
+    --text-dim: #7a9a7a;
+    --accent: #b8e994;
+    --gold: #c8b46a;
+}
+
+/* Layout */
+.content {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* Tipografia */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Archivo', serif;
+    color: var(--cream);
+}
+
+p {
+    font-family: 'Roboto', monospace;
+}
+
+strong{
+    color: var(--green-mid);
+}
+
+/* Header */
+.header {
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 3rem;
+    position: sticky;
+    top: 1rem;
+    background: rgba(28, 55, 28, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1rem;
+    border: 1px solid rgba(232, 234, 214, 0.18);
+    color: var(--cream);
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: auto;
+}
+
+.menu-container {
+    padding: 1rem;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header h1 {
+    font-size: 1.2rem;
+    margin-right: auto;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo {
+    border-radius: 4rem;
+    height: 5.7rem;
+    background: var(--cream);
+    margin-right: auto;
+}
+
+/* Secções de conteúdo */
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        color: var(--green-bright);
+        font-family: 'Roboto', monospace;
+        
+    }
+
+}
+
+.hero-content{
+    font-size: clamp(2rem, 2vw, 4rem);
+    font-weight: 600;
+    
+}
+
+.hero-img img{
+    height: clamp(15rem, 50vw, 30rem);
+}
+
+.textandimg {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    flex-wrap: wrap;
+}
+
+.textandbigimg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    flex-wrap: wrap;
+}
+
+/* Botões */
+
+button{
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cream);
+    background-color: transparent;
+    border: 1px solid var(--cream);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px var(--green);
+}
+
+/* Imagens */
+.img1,
+.img2,
+.img3 {
+    border-radius: 2rem;
+    height: clamp(15rem, 30vw, 30rem);
+    box-shadow: 0 1rem 2rem rgba(72, 138, 73, 0.45);
+}
+
+/* Links */
+a[href] {
+    position: relative;
+}
+
+a:link,
+a:visited {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+a[href]:after {
+    content: "";
+    position: absolute;
+    background-color: var(--accent);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+a:active {
+    color: var(--green-bright);
+}
+
+/* Tira o efeito de hover dos anchors da classe button */
+a.button:hover,
+a.button:active {
+    color: var(--cream);
+}
+
+a.button:hover:after {
+    width: 0;
+}
+
+/* bg */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* Retira o scroll exclusivamente da seção hero */
+html.no-scroll,
+body.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* certifica que tá tudo certo quando tirar o scorll. */
+body.no-scroll .content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    backdrop-filter: contrast(150%) brightness(100%);
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.04;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(76,175,80,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(76,175,80,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 5s linear infinite;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(60px);
+    }
+}
+
+/* media queries */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .menu-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .menu-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .img1,
+    .img2 {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .textandimg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .textandbigimg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .header h1 {
+        margin-right: 0;
+        text-align: center;
+    }
+}
+
+/* fundo preto
+body {
+    background: #080808;
+    color: #f5f5f5;
+    min-height: 100vh;
+    margin: 0;
+}
+*/
